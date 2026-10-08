@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Hotel Admin Dashboard</h1>
+    <p>Manage rooms and bookings</p>
+  </header>
+
+  <main>
+
+    <!-- Dashboard Stats -->
+    <section class="stats">
+
+      <div class="stat-card">
+        <h3>Total Rooms</h3>
+        <p id="totalRooms">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Available Rooms</h3>
+        <p id="availableRooms">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Booked Rooms</h3>
+        <p id="bookedRooms">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Total Bookings</h3>
+        <p id="totalBookings">0</p>
+      </div>
+
+    </section>
+
+
+    <!-- Add Room -->
+    <section class="card">
+
+      <h2>Add New Room</h2>
+
+      <form id="roomForm">
+
+        <input
+          type="text"
+          name="room_no"
+          placeholder="Room Number"
+          required
+        >
+
+        <select name="type">
+          <option value="Single">Single</option>
+          <option value="Double">Double</option>
+          <option value="Suite">Suite</option>
+        </select>
+
+        <input
+          type="number"
+          name="price"
+          placeholder="Price per Night"
+          min="1"
+          required
+        >
+
+        <button type="submit">
+          Add Room
+        </button>
+
+      </form>
+
+    </section>
+
+
+    <!-- Rooms -->
+    <section class="card">
+
+      <h2>Manage Rooms</h2>
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Room No</th>
+              <th>Type</th>
+              <th>Price</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="roomsBody"></tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+
+    <!-- Bookings -->
+    <section class="card">
+
+      <h2>Manage Bookings</h2>
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Guest</th>
+              <th>Room</th>
+              <th>Check-in</th>
+              <th>Check-out</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="bookingsBody"></tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="admin.js"></script>
+
+</body>
+</html>

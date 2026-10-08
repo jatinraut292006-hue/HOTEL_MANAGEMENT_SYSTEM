@@ -1,0 +1,4 @@
+node_modules/
+hotel.db
+.env
+npm-debug.log*

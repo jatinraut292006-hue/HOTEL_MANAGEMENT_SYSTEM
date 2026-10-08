@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GrandStay Hotel</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="topbar">
+
+    <div class="logo">
+      <h1>GrandStay</h1>
+      <span>HOTEL & RESORT</span>
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#about">About</a>
+
+      <a
+        href="/admin/"
+        class="admin-link"
+        target="_blank"
+      >
+        Hotel Admin
+      </a>
+    </nav>
+
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section id="home" class="hero">
+
+    <div class="hero-content">
+
+      <p class="welcome">
+        WELCOME TO GRANDSTAY
+      </p>
+
+      <h2>
+        Your Comfortable Stay<br>
+        Starts Here
+      </h2>
+
+      <p class="hero-text">
+        Discover comfortable rooms, modern facilities,
+        and a simple booking experience.
+      </p>
+
+      <a href="#booking" class="hero-button">
+        Book Your Stay
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= SEARCH ================= -->
+
+  <section id="booking" class="search-section">
+
+    <div class="search-box">
+
+      <div class="search-heading">
+        <h2>Find Your Perfect Room</h2>
+        <p>Choose your dates and room type</p>
+      </div>
+
+
+      <form id="searchForm">
+
+        <div class="field">
+
+          <label>
+            Check-in
+          </label>
+
+          <input
+            type="date"
+            name="checkIn"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Check-out
+          </label>
+
+          <input
+            type="date"
+            name="checkOut"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Room Type
+          </label>
+
+          <select name="type">
+
+            <option value="">
+              Any Room
+            </option>
+
+            <option value="Single">
+              Single
+            </option>
+
+            <option value="Double">
+              Double
+            </option>
+
+            <option value="Suite">
+              Suite
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <button type="submit" class="search-button">
+          Search Rooms
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= ROOMS ================= -->
+
+  <section id="rooms" class="rooms-section">
+
+    <div class="section-heading">
+
+      <p>OUR ROOMS</p>
+
+      <h2>Choose Your Room</h2>
+
+      <span>
+        Comfortable spaces designed for a relaxing stay.
+      </span>
+
+    </div>
+
+
+    <div
+      id="roomsGrid"
+      class="rooms-grid"
+    >
+
+      <!-- Rooms will be loaded here using JavaScript -->
+
+      <div class="loading">
+        Loading rooms...
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= BOOKING MODAL ================= -->
+
+  <div
+    id="bookingModal"
+    class="modal"
+    hidden
+  >
+
+    <div class="modal-content">
+
+      <button
+        id="closeModal"
+        class="close-button"
+        type="button"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-header">
+
+        <p>RESERVE YOUR ROOM</p>
+
+        <h2>
+          Book Room
+          <span id="selectedRoomNo"></span>
+        </h2>
+
+      </div>
+
+
+      <form id="bookingForm">
+
+        <input
+          type="hidden"
+          name="room_id"
+        >
+
+
+        <div class="form-field">
+
+          <label>
+            Guest Name
+          </label>
+
+          <input
+            type="text"
+            name="guest_name"
+            placeholder="Enter your full name"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-field">
+
+            <label>
+              Check-in
+            </label>
+
+            <input
+              type="date"
+              name="check_in"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label>
+              Check-out
+            </label>
+
+            <input
+              type="date"
+              name="check_out"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="confirm-button"
+        >
+          Confirm Booking
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= ABOUT ================= -->
+
+  <section id="about" class="about-section">
+
+    <div class="about-content">
+
+      <p>ABOUT GRANDSTAY</p>
+
+      <h2>
+        A stay designed around you.
+      </h2>
+
+      <p>
+        GrandStay Hotel offers comfortable accommodation
+        for guests looking for a convenient and pleasant
+        stay. Browse available rooms, select your dates,
+        and complete your reservation in just a few steps.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div>
+
+      <h3>GrandStay Hotel</h3>
+
+      <p>
+        Comfortable stays. Simple booking.
+      </p>
+
+    </div>
+
+
+    <div class="footer-right">
+
+      <a href="/admin/" target="_blank">
+        Hotel Admin
+      </a>
+
+      <p>
+        © 2026 GrandStay Hotel
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= TOAST ================= -->
+
+  <div
+    id="toast"
+    class="toast"
+  ></div>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
